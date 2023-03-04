@@ -16,10 +16,12 @@ public interface ContainerMixin extends Clearable, Sortable {
     @Shadow
     int getContainerSize();
 
+    @Override
     default Iterable<Integer> getSortSlots() {
         return new IntegerRange(0, getContainerSize());
     }
 
+    @Override
     default Iterable<Integer> getRefillSlots() {
         return Collections.emptyList();
     }

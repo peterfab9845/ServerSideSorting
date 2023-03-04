@@ -12,6 +12,7 @@ public class IntegerRange implements Iterable<Integer> {
         this.stop = stop;
     }
 
+    @Override
     public Iterator<Integer> iterator() {
         return IntStream.range(start, stop).iterator();
     }

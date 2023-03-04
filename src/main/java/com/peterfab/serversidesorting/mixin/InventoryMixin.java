@@ -27,10 +27,12 @@ public abstract class InventoryMixin implements Container, Nameable, Sortable {
         throw new UnsupportedOperationException("Mixin function should never be called");
     }
 
+    @Override
     public Iterable<Integer> getSortSlots() {
         return new IntegerRange(getSelectionSize(), items.size());
     }
 
+    @Override
     public Iterable<Integer> getRefillSlots() {
         List<Integer> refillSlots = new ArrayList<>();
         refillSlots.add(selected);
