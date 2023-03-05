@@ -28,6 +28,10 @@ public abstract class AbstractContainerMenuMixin {
     private void onDoClick(int slotNum, int buttonNum, ClickType clickType, Player player, CallbackInfo ci) {
         if (!player.getLevel().isClientSide()) {
             if (slotNum > 0 && slotNum < slots.size()) {
+                // ClickType.CLONE possibilities (1.19.3 vanilla, Forge changes it):
+                // 1. Creative only, use pick block *mouse button* on any slot (from cloning slot stack)
+                // 2. Any gamemode, have an item held and use pick block *mouse button* on any slot (from drag-cloning held stack)
+                // 3. Any gamemode, hover over an item and use pick block *key* (from cloning slot stack)
                 if ((clickType == ClickType.CLONE && !player.getAbilities().instabuild) || (clickType == ClickType.QUICK_MOVE && buttonNum == 1)) {
                     ci.cancel();
 
