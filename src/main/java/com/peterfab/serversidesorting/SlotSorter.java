@@ -29,7 +29,6 @@ public class SlotSorter {
     }
 
     public void sort() {
-        // TODO ordering without using ID is hard
         PriorityQueue<ItemStack> pendingItems = new PriorityQueue<>(new ItemStackComparator());
 
         // pull items from sorted slots

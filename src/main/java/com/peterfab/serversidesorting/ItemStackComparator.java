@@ -6,6 +6,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
+// TODO ordering without using ID is hard
 public class ItemStackComparator implements Comparator<ItemStack> {
     public int compare(ItemStack a, ItemStack b) {
         // return positive -> sort a after b

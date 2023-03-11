@@ -24,7 +24,7 @@ public abstract class InventoryMixin implements Container, Nameable, Sortable {
     public int selected;
     @Shadow
     public static int getSelectionSize() {
-        throw new UnsupportedOperationException("Mixin function should never be called");
+        throw new UnsupportedOperationException("Shadow function should never be called");
     }
 
     @Override
