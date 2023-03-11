@@ -1,14 +1,12 @@
 package com.peterfab.serversidesorting;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.PriorityQueue;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 public class SlotSorter {
@@ -31,8 +29,8 @@ public class SlotSorter {
     }
 
     public void sort() {
-        // TODO better ordering is hard
-        PriorityQueue<ItemStack> pendingItems = new PriorityQueue<>(Comparator.comparingInt((ItemStack stack) -> Item.getId(stack.getItem())));
+        // TODO ordering without using ID is hard
+        PriorityQueue<ItemStack> pendingItems = new PriorityQueue<>(new ItemStackComparator());
 
         // pull items from sorted slots
         for (Slot slot : sortSlots) {
